@@ -1,0 +1,24 @@
+server:
+  port: 7002
+  servlet:
+    context-path: /eureka-client-shop-user
+
+spring:
+  application:
+    name: eureka-client-shop-user
+
+eureka:
+  client:
+    service-url:
+      #      defaultZone: http://server1:8000/eureka/
+      defaultZone: http://server1:8000/eureka/,http://server2:8001/eureka/,http://server3:8002/eureka/
+
+feign:
+  hystrix:
+    enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

@@ -1,0 +1,43 @@
+# 单机配置
+spring:
+  application:
+    name: shop-getWayApplication
+  #  cloud:
+  #    gateway:
+  #      routes:
+  #        - id: baidu_route
+  #            uri: http://baidu.com:80/
+  #            predicates:
+  #              - Path=/baidu
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          #          是否与服务发现组件进行结合，
+          enabled: true
+          #          当注册中心为Eureka时，设置为true  表示 开启小写的serviceId进行基于路由的转发
+          lower-case-service-id: true
+#      routes:
+#        - id: baidu_route
+#          uri: http://baidu.com:80/
+#          predicates:
+#            - Path=/baidu
+server:
+  port: 9000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  security:
+    enabled: false
+
+eureka:
+  client:
+    service-url:
+      #      defaultZone: http://server1:8000/eureka/
+      defaultZone: http://server1:8000/eureka/,http://server2:8001/eureka/,http://server3:8002/eureka/
+logging:
+  level:
+    org.springframework.cloud.gateway: debug

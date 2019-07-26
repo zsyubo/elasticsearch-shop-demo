@@ -1,0 +1,74 @@
+# 单机配置
+#spring:
+#  application:
+#    name: shop-eurekaApplication
+#
+#server:
+#  port: 8000
+#
+#eureka:
+#  instance:
+#    hostname: localhost
+#  client:
+#    # 是否从eureka server获取用户信息,单机不需要
+#    fetch-registry: false
+#    # 是否将自己 注册到 EurekaApplication server  单机不需要
+#    register-with-eureka: false
+#    service-url:
+#      defaultZone: http://${eureka.instance.hostname}:${server.port}/EurekaApplication/
+#
+##
+
+spring:
+  profiles:
+    active:  server1
+
+
+---
+spring:
+  application:
+    name: shop-eurekaApplication
+  profiles: server1
+server:
+  port: 8000
+eureka:
+  instance:
+    hostname: eureka8000 #eureka服务端的实例名称
+  client:
+    register-with-eureka: false     #false表示不向注册中心注册自己。
+    fetch-registry: false     #false表示自己端就是注册中心，我的职责就是维护服务实例，并不需要去检索服务
+    service-url:
+      #单机 defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/       #设置与Eureka Server交互的地址查询服务和注册服务都需要依赖这个地址（单机）。
+      defaultZone: http://6s.net579.com:19344/eureka/,http://6s.net579.com:20228/eureka/
+---
+spring:
+  application:
+    name: shop-eurekaApplication
+  profiles: server2
+server:
+  port: 8001
+eureka:
+  instance:
+    hostname: eureka8001 #eureka服务端的实例名称
+  client:
+    register-with-eureka: false     #false表示不向注册中心注册自己。
+    fetch-registry: false     #false表示自己端就是注册中心，我的职责就是维护服务实例，并不需要去检索服务
+    service-url:
+      #单机 defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/       #设置与Eureka Server交互的地址查询服务和注册服务都需要依赖这个地址（单机）。
+      defaultZone: http://6s.net579.com:21410/eureka/,http://6s.net579.com:20228/eureka/
+---
+spring:
+  application:
+    name: shop-eurekaApplication
+  profiles: server3
+server:
+  port: 8002
+eureka:
+  instance:
+    hostname: eureka8002 #eureka服务端的实例名称
+  client:
+    register-with-eureka: false     #false表示不向注册中心注册自己。
+    fetch-registry: false     #false表示自己端就是注册中心，我的职责就是维护服务实例，并不需要去检索服务
+    service-url:
+      #单机 defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/       #设置与Eureka Server交互的地址查询服务和注册服务都需要依赖这个地址（单机）。
+      defaultZone: http://6s.net579.com:21410/eureka/,http://6s.net579.com:19344/eureka/

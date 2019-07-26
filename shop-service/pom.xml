@@ -10,10 +10,18 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>shop-service</artifactId>
+    <packaging>pom</packaging>
 
     <modules>
         <module>shop-bean</module>
         <module>shop-interface</module>
         <module>shop-common</module>
+        <!--        用户模块 -->
+        <module>shop-user</module>
+        <!--        商品模块-->
+        <module>shop-product</module>
+        <!--        社区模块-->
+        <module>shop-community</module>
+        <module>shop-vo</module>
     </modules>
 </project>

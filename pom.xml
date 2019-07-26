@@ -10,6 +10,7 @@
     <modules>
         <module>shop-service</module>
         <module>shop-eureka</module>
+        <module>shop-getway</module>
     </modules>
     <packaging>pom</packaging>
     <!--定义jar版本号-->
