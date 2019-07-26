@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>groupId</groupId>
-    <artifactId>elasticsearch-shop-demo</artifactId>
+    <groupId>elasticsearch-shop-demo</groupId>
+    <artifactId>total-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>shop-service</module>
@@ -31,8 +31,6 @@
         <jna.version>4.5.1</jna.version>
         <beanUtils.version>1.9.3</beanUtils.version>
         <jest.version>5.3.3</jest.version>
-
-
     </properties>
 
     <parent>
