@@ -11,10 +11,12 @@
         <module>shop-service</module>
         <module>shop-eureka</module>
         <module>shop-getway</module>
+        <module>spring-learn-xml</module>
     </modules>
     <packaging>pom</packaging>
     <!--定义jar版本号-->
     <properties>
+        <alibaba-cloud-version>2.1.0.RELEASE</alibaba-cloud-version>
         <mybatis-plus.start.version>3.1.2</mybatis-plus.start.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -64,7 +66,13 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${alibaba-cloud-version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
         <!--只定义版本，并不是实际依赖jar包-->
             <dependency>
                 <groupId>net.sourceforge.nekohtml</groupId>
@@ -122,6 +130,11 @@
                 <groupId>commons-beanutils</groupId>
                 <artifactId>commons-beanutils</artifactId>
                 <version>${beanUtils.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.example1111111</groupId>
+                <artifactId>demo</artifactId>
+                <version>0.0.1</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

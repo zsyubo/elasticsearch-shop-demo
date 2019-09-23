@@ -23,5 +23,6 @@
         <!--        社区模块-->
         <module>shop-community</module>
         <module>shop-vo</module>
+        <module>shop-test</module>
     </modules>
 </project>
